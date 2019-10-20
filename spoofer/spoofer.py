@@ -127,10 +127,8 @@ def main():
     parser.add_argument('-n', '--num-queries', type=int, default=1)
 
     args = parser.parse_args()
-    verbose = args.verbose
     num_queries = args.num_queries
     del args.num_queries
-    del args.verbose
     if args.src_port is None:
         args.src_port = free_port()
     else:
