@@ -8,7 +8,6 @@ import time
 from argparse import ArgumentParser
 
 import dns.message
-import dns.resolver
 
 from .utils import free_port, get_my_ip_address
 
@@ -108,14 +107,6 @@ def dns_query_udp(src_addr, dst_addr, src_port, dst_port, qname, rdtype, timeout
               payload=wire)
     return sock.sendto(ip + udp + wire, (dst_addr, dst_port))
 
-def recv_answer(port, timeout=3):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.settimeout(timeout)
-    sock.bind(('', port))
-    wire, addr = sock.recvfrom(8192)
-    answer = dns.message.from_wire(wire)
-    return answer
-
 def main():
     parser = ArgumentParser()
     parser.add_argument('qname', type=str)
@@ -142,9 +133,6 @@ def main():
     for _ in range(num_queries):
         dns_query_udp(args.src_addr, args.dst_addr, args.src_port, args.dst_port, args.qname, args.rdtype)
         print('(query) {src_addr}#{src_port} --> {dst_addr}#{dst_port}, "{qname}" type "{rdtype}"'.format(**vars(args)), file=sys.stderr)
-        if args.src_addr == my_ip:
-            ans = recv_answer(args.src_port)
-            print(ans)
     end_time = time.time()
     query_time = end_time - start_time
     qps = num_queries / (end_time - start_time)

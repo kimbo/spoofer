@@ -18,6 +18,7 @@ setup(
     entry_points={
         'console_scripts': [
             'dns-spoofer=spoofer.spoofer:main',
+            'dns-listen=spoofer.listen:main',
         ],
     },
     install_requires=['dnspython'],
