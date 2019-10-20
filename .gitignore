@@ -4,3 +4,4 @@
 /dns_spoofer.egg-info
 /build
 /dist
+*.swp
