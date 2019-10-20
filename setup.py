@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'dns-spoofer=spoofer.spoofer:main',
+            'dns-spoof=spoofer.spoofer:main',
             'dns-listen=spoofer.listen:main',
         ],
     },
