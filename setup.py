@@ -22,4 +22,5 @@ setup(
         ],
     },
     install_requires=['dnspython'],
+    long_description_content_type='text/markdown'
 )
