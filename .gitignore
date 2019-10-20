@@ -1,0 +1,6 @@
+/venv
+/*/__pycache__
+*.pyc
+/dns_spoofer.egg-info
+/build
+/dist
