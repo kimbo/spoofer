@@ -134,11 +134,11 @@ def main():
         dns_query_udp(args.src_addr, args.dst_addr, args.src_port, args.dst_port, args.qname, args.rdtype)
         print('(query) {src_addr}#{src_port} --> {dst_addr}#{dst_port}, "{qname}" type "{rdtype}"'.format(**vars(args)), file=sys.stderr)
     end_time = time.time()
-    query_time = end_time - start_time
-    qps = num_queries / (end_time - start_time)
     print(file=sys.stderr)
+    query_time = end_time - start_time
     print('### QUERY TIME: {}'.format(query_time), file=sys.stderr)
-    print('### QPS: {}'.format(qps), file=sys.stderr)
+    #qps = num_queries / (end_time - start_time)
+    #print('### QPS: {}'.format(qps), file=sys.stderr)
 
 if __name__ == '__main__':
     main()
