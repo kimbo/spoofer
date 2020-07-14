@@ -1,14 +1,26 @@
 # dns-spoofer
 
-Send spoofed DNS queries over UDP.
+:heavy_check_mark: Send spoofed DNS queries
+
+:heavy_check_mark: IP layer
+
+:heavy_check_mark: UDP layer
+
+:heavy_check_mark: No scapy
 
 # Installation
 
+To install:
+```
+pip install dns-spoofer
+```
+
+If you want to make sure you get the latest changes from Github:
 ```
 pip install git+https://github.com/kimbo/dns-spoofer.git
 ```
 
-That will install two scripts
+Now you'll have two commands available to run:
 
 - `dns-spoof` - send DNS queries with a different source port and source IP address than your own.
 - `dns-listen` - listen for and print UDP packets (i.e. DNS queries) on a port and address
@@ -99,7 +111,7 @@ optional arguments:
 
 # Disclaimers
 
-- I've only tested this from behind a NAT
+- I've only tested this from behind a NAT.
 - Only works with UDP and IPv4
 - I'm not responsible for what you do with this.
 
