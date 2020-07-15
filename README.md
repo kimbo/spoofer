@@ -6,8 +6,6 @@
 
 :heavy_check_mark: UDP layer
 
-:heavy_check_mark: No scapy
-
 # Installation
 
 To install:
